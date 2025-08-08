@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* React Flow specific styles */
+.reactflow-wrapper {
+  background-color: #f8fafc; /* light gray background */
+}
+
+.reactflow__node {
+  border-radius: 0.5rem !important; /* Match shadcn border-radius */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important; /* Tailwind shadow-md */
+  padding: 0 !important; /* Remove default padding as we control it in BaseNode */
+  background-color: transparent !important; /* Let BaseNode control background */
+  border: none !important; /* Let BaseNode control border */
+}
+
+.reactflow__handle {
+  width: 8px !important;
+  height: 8px !important;
+  background: #64748b !important; /* slate-500 */
+  border: 1px solid #475569 !important; /* slate-600 */
+}
+
+.reactflow__edge-path {
+  stroke: #94a3b8 !important; /* slate-400 */
+  stroke-width: 2px !important;
+}
+
+.reactflow__edge.selected .reactflow__edge-path {
+  stroke: #3b82f6 !important; /* blue-500 */
+}
+
+.reactflow__controls-button {
+  @apply bg-white border border-gray-200 text-gray-700 hover:bg-gray-50;
+}
+
+.reactflow__minimap {
+  background-color: #f8fafc !important;
+}
+
+.reactflow__minimap-mask {
+  fill: rgba(0, 0, 0, 0.05) !important;
+}
+
+.reactflow__minimap-node {
+  fill: #cbd5e1 !important; /* slate-300 */
+  stroke: none !important;
+}
+
+.reactflow__minimap-node.selected {
+  fill: #3b82f6 !important; /* blue-500 */
+}
