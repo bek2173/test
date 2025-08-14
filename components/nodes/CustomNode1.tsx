@@ -27,7 +27,7 @@ export const CustomNode1: React.FC = ({ data }: any) => {
             Strict Mode
           </Label>
         </div>
-        <p className="text-xs text-gray-500">Filters data based on a condition.</p>
+        <p className="text-xs text-gray-500">Filters data based on a given condition.</p>
       </div>
     </BaseNode>
   );
