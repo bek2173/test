@@ -28,13 +28,13 @@ export const TextNode: React.FC = ({ id, data }: any) => {
   useEffect(() => {
     const matches = Array.from(text.matchAll(VARIABLE_REGEX));
     const newHandles = Array.from(
-      new Set(matches.map((match) => match[1]))
+      new Set(matches.map((match) => (match as RegExpMatchArray)[1]))
     );
     setDynamicHandles(newHandles);
     updateNodeInternals(id); // Notify React Flow of handle changes
   }, [text, id, updateNodeInternals]);
 
-  const baseHandles = [
+  const baseHandles: { type: "source" | "target"; position: Position; id?: string; style?: React.CSSProperties }[] = [
     { type: "source", position: Position.Right, id: "output" },
   ];
 
