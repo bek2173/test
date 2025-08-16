@@ -8,6 +8,7 @@ import ReactFlow, {
   useNodesState,
   useEdgesState,
   Background,
+  BackgroundVariant,
   ReactFlowProvider,
   useReactFlow,
   Panel,
@@ -43,7 +44,12 @@ const nodeTypes = {
   customNode5: CustomNode5,
 };
 
-const initialNodes = [
+type CustomNodeData = {
+  label: string;
+  initialText?: string;
+};
+
+const initialNodes: Node<CustomNodeData>[] = [
   {
     id: "1",
     type: "inputNode",
@@ -93,7 +99,7 @@ const initialEdges = [
     targetHandle: "input",
   },
 ];
-
+  const [nodes, setNodes, onNodesChange] = useNodesState<CustomNodeData>(initialNodes);
 let nodeId = 5; // Start after our initial nodes
 const getId = () => `node_${nodeId++}`;
 
@@ -209,7 +215,7 @@ function Flow() {
         {/* Header */}
         <div className="flex justify-between items-center p-4 border-b border-gray-200 bg-white shadow-sm">
           <div>
-            <h1 className="text-2xl font-bold text-gray-800">Pipeline Editor</h1>
+            <h1 className="text-2xl font-bold text-gray-800">The Pipeline Editor</h1>
             <p className="text-sm text-gray-600">Build and visualize your data processing pipeline</p>
           </div>
           <div className="flex items-center gap-4">
@@ -240,7 +246,7 @@ function Flow() {
             defaultViewport={{ x: 0, y: 0, zoom: 1 }}
             proOptions={{ hideAttribution: true }}
           >
-            <Background variant="dots" gap={12} size={1} color="#e2e8f0" />
+            <Background variant={BackgroundVariant.Dots} gap={12} size={1} color="#e2e8f1" />
             <Controls className="bg-white shadow-md rounded-md border border-gray-200" />
             <MiniMap 
               nodeStrokeWidth={3}
