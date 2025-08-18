@@ -215,7 +215,7 @@ function Flow() {
         {/* Header */}
         <div className="flex justify-between items-center p-4 border-b border-gray-200 bg-white shadow-sm">
           <div>
-            <h1 className="text-2xl font-bold text-gray-800">The Pipeline Editor</h1>
+            <h1 className="text-2xl font-bold text-gray-800">Pipeline Editor</h1>
             <p className="text-sm text-gray-600">Build and visualize your data processing pipeline</p>
           </div>
           <div className="flex items-center gap-4">

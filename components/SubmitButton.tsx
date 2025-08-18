@@ -26,7 +26,7 @@ export const SubmitButton: React.FC<SubmitButtonProps> = ({
       ) : (
         <PlayIcon className="h-4 w-4" />
       )}
-      Submit the Pipeline ({nodeCount} nodes, {edgeCount} edges)
+      Submit Pipeline ({nodeCount} nodes, {edgeCount} edges)
     </Button>
   );
 };
